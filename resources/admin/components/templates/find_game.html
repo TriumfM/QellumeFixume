@@ -1,0 +1,29 @@
+<div>
+	
+	<h2 class="nenTitulli">Find rooms</h2><br><br><br>
+	<input type="search" class="input2" name="search" placeholder="Find room" v-model="searchInput">
+	<br><br><br>
+	<table class="table1">
+		<tr>
+			<!-- <th><span>Id</span></th> -->
+			<th><span>Room</span></th>
+			<th><span>Max Player</span></th>
+			<th><span>Level</span></th>
+			<th>Join free room</th>
+		</tr>
+		<tr v-for="(room,index) in filteredList">
+			<!-- <td><span>{{room.id}}</span></td> -->
+			<td><span>{{room.name}}</span></td>
+			<td><span>{{room.maxPlayers}}</span></td>
+			<td><span>{{room.number | toString1}}</span></td>
+			<td>
+
+			<router-link to="/startmultiplayer">
+				<button @click="JoinRoom(room.id)" class="buton3">Join Room</button>
+			</router-link>
+			</td>
+		</tr>
+		
+	</table>
+	
+</div>

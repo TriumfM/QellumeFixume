@@ -1,0 +1,17 @@
+<div class="multiGame">
+	<div class="inputItem"  >
+		<input type="number" name="tryNumber" v-if="frmTry" class="tryNumber input1" v-model="inputTry" @keyup.enter="SendTry()">
+
+		<input type="submit" name="" v-if="frmTry" class="buton4" @click="SendTry()"  >
+		<router-link to="/singelplayer" v-if="btnNewGame" ><button class="buton4" >New Game</button></router-link>
+	</div>
+
+	<div class="tentimet">
+		<h3 >{{infoInput}}</h3>
+		<h4 class="span1"  v-for="tryy in tries">
+		{{tryy.tentimi}} {{tryy.message}}</h4>
+
+	</div>
+
+
+</div>

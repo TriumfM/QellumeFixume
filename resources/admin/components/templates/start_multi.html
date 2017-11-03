@@ -1,0 +1,18 @@
+<div class="frmStartMulti">
+	<h2>Active user in room</h2>
+	<ol>
+		<li class="span1" v-for="player in ReadyPlayers">{{player.user.username}}</li>		
+	</ol>
+	<div  class="loading">
+		<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+		<span class="sr-only">Loading...</span>
+	</div>
+	
+	<div class="ftmRight" v-if="bool && !loading">
+		<router-link to="/game-multiplayer"> 
+			<button class="buton3" >Start game</button>
+		</router-link>
+	</div>
+
+
+</div>

@@ -1,0 +1,36 @@
+<div class="frmNewGame">
+	<h2>Create new room</h2>
+	<br><br>
+	
+		<span class="span1"><b>Level:  </b> </span>
+		<span class="span1">Low</span><input type="radio" name="f" v-model="diff" v-bind:value="2">
+		<span class="span1">  Medium</span><input type="radio" name="f" v-model="diff" v-bind:value="3">
+		<span class="span1">  High</span><input type="radio" name="f" v-model="diff" v-bind:value="4">
+
+		<br><br>
+
+		<span class="span1"><b>Players:</b></span>
+		<select v-model="nr_player" class="select1">
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+
+		<br><br>
+
+		<span class="span1"><b>Name of room: </b> </span>
+		<input type="text" name="NameRoom" v-model="name_room">
+
+		<br><br>
+
+		<div class="ftmRight">
+			<router-link to="/startmultiplayer"> 
+				<input class="buton2" type="submit" name="CreateRoom" value="Create" @click="CreateRoom()">
+			</router-link>
+							
+			<input class="buton3" type="button" name="Clear" value="Clear" @click="ClearForm()">
+		</div>
+	
+
+</div>

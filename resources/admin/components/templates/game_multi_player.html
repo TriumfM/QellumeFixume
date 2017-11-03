@@ -1,0 +1,21 @@
+<div class="multiGame">
+	<div class="inputItem" >
+		<input type="number" name="tryNumber" class="tryNumber input1" v-model="inputTry">
+		<input type="submit" name="" class="buton4" @click="SendTry()" v-if="bool">
+	</div>
+
+	<div class="tentimet">
+		<h4 class="span1"  v-for="tryy in tries">
+		{{tryy.tentimi}} {{tryy.message}}</h4>
+	
+
+	</div>
+
+	<div class="players">
+		<h3>Players</h3>
+		<ol>
+			<li v-for="player in players">{{player.user.username}}</li>
+		</ol>
+		
+	</div>
+</div>
