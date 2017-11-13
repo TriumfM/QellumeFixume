@@ -127,6 +127,11 @@
 	_vue2.default.use(_vueRouter2.default);
 	_vue2.default.use(_vueResource2.default);
 	_vue2.default.use(_vueLocalstorage2.default);
+
+	_vue2.default.config.devtools = false;
+	_vue2.default.config.debug = false;
+	_vue2.default.config.silent = true;
+
 	// Vue.use(socketio)
 
 
@@ -16454,7 +16459,10 @@
 	      "to": "/multiplayer"
 	    }
 	  }, [_c('button', {
-	    staticClass: "buton1"
+	    staticClass: "buton1",
+	    attrs: {
+	      "id": "multibuton"
+	    }
 	  }, [_c('span', [_vm._v("Multi Player")])])])], 1)
 	},staticRenderFns: []}
 	if (false) {
@@ -16726,7 +16734,10 @@
 	      "to": "/findgame"
 	    }
 	  }, [_c('button', {
-	    staticClass: "buton1"
+	    staticClass: "buton1",
+	    attrs: {
+	      "id": "findbuton"
+	    }
 	  }, [_c('span', [_vm._v("Find Game")])])])], 1)
 	},staticRenderFns: []}
 	if (false) {
@@ -17131,20 +17142,28 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
+	  return _c('div', [_c('h2', {
+	    staticClass: "nenTitulli"
+	  }, [_vm._v("Create new room")]), _vm._v(" "), _c('br'), _c('br'), _c('br'), _c('br'), _vm._v(" "), _c('div', {
 	    staticClass: "frmNewGame"
-	  }, [_c('h2', [_vm._v("Create new room")]), _vm._v(" "), _c('br'), _c('br'), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('span', {
-	    staticClass: "span1"
-	  }, [_vm._v("Low")]), _c('input', {
+	  }, [_c('div', {
+	    attrs: {
+	      "id": "Level"
+	    }
+	  }, [_vm._m(0), _vm._v(" "), _c('ul', {
+	    staticClass: "ulRadio"
+	  }, [_c('li', [_c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
 	      value: (_vm.diff),
 	      expression: "diff"
 	    }],
+	    staticClass: "radio2",
 	    attrs: {
 	      "type": "radio",
-	      "name": "f"
+	      "id": "f-option",
+	      "name": "selector"
 	    },
 	    domProps: {
 	      "value": 2,
@@ -17155,18 +17174,24 @@
 	        _vm.diff = 2
 	      }
 	    }
-	  }), _vm._v(" "), _c('span', {
-	    staticClass: "span1"
-	  }, [_vm._v("  Medium")]), _c('input', {
+	  }), _vm._v(" "), _c('label', {
+	    attrs: {
+	      "for": "f-option"
+	    }
+	  }, [_vm._v("2")]), _vm._v(" "), _c('div', {
+	    staticClass: "check"
+	  })]), _vm._v(" "), _c('li', [_c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
 	      value: (_vm.diff),
 	      expression: "diff"
 	    }],
+	    staticClass: "radio2",
 	    attrs: {
 	      "type": "radio",
-	      "name": "f"
+	      "id": "s-option",
+	      "name": "selector"
 	    },
 	    domProps: {
 	      "value": 3,
@@ -17177,18 +17202,22 @@
 	        _vm.diff = 3
 	      }
 	    }
-	  }), _vm._v(" "), _c('span', {
-	    staticClass: "span1"
-	  }, [_vm._v("  High")]), _c('input', {
+	  }), _vm._v(" "), _c('label', {
+	    attrs: {
+	      "for": "s-option"
+	    }
+	  }, [_vm._v("3")]), _vm._v(" "), _vm._m(1)]), _vm._v(" "), _c('li', [_c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
 	      value: (_vm.diff),
 	      expression: "diff"
 	    }],
+	    staticClass: "radio2",
 	    attrs: {
 	      "type": "radio",
-	      "name": "f"
+	      "id": "t-option",
+	      "name": "selector"
 	    },
 	    domProps: {
 	      "value": 4,
@@ -17199,32 +17228,134 @@
 	        _vm.diff = 4
 	      }
 	    }
-	  }), _vm._v(" "), _c('br'), _c('br'), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('select', {
+	  }), _vm._v(" "), _c('label', {
+	    attrs: {
+	      "for": "t-option"
+	    }
+	  }, [_vm._v("4")]), _vm._v(" "), _vm._m(2)])])]), _vm._v(" "), _c('div', {
+	    attrs: {
+	      "id": "NrPlayers"
+	    }
+	  }, [_vm._m(3), _vm._v(" "), _c('ul', {
+	    staticClass: "ulRadio"
+	  }, [_c('li', [_c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
 	      value: (_vm.nr_player),
 	      expression: "nr_player"
 	    }],
-	    staticClass: "select1",
+	    staticClass: "radio1",
+	    attrs: {
+	      "type": "radio",
+	      "id": "t1-option",
+	      "name": "selector1"
+	    },
+	    domProps: {
+	      "value": 2,
+	      "checked": _vm._q(_vm.nr_player, 2)
+	    },
 	    on: {
 	      "change": function($event) {
-	        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-	          return o.selected
-	        }).map(function(o) {
-	          var val = "_value" in o ? o._value : o.value;
-	          return val
-	        });
-	        _vm.nr_player = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+	        _vm.nr_player = 2
 	      }
 	    }
-	  }, [_c('option', [_vm._v("2")]), _vm._v(" "), _c('option', [_vm._v("3")]), _vm._v(" "), _c('option', [_vm._v("4")]), _vm._v(" "), _c('option', [_vm._v("5")])]), _vm._v(" "), _c('br'), _c('br'), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('input', {
+	  }), _vm._v(" "), _c('label', {
+	    attrs: {
+	      "for": "t1-option"
+	    }
+	  }, [_vm._v("2")]), _vm._v(" "), _c('div', {
+	    staticClass: "check"
+	  })]), _vm._v(" "), _c('li', [_c('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (_vm.nr_player),
+	      expression: "nr_player"
+	    }],
+	    staticClass: "radio1",
+	    attrs: {
+	      "type": "radio",
+	      "id": "t2-option",
+	      "name": "selector1"
+	    },
+	    domProps: {
+	      "value": 3,
+	      "checked": _vm._q(_vm.nr_player, 3)
+	    },
+	    on: {
+	      "change": function($event) {
+	        _vm.nr_player = 3
+	      }
+	    }
+	  }), _vm._v(" "), _c('label', {
+	    attrs: {
+	      "for": "t2-option"
+	    }
+	  }, [_vm._v("3")]), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _c('li', [_c('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (_vm.nr_player),
+	      expression: "nr_player"
+	    }],
+	    staticClass: "radio1",
+	    attrs: {
+	      "type": "radio",
+	      "id": "t3-option",
+	      "name": "selector1"
+	    },
+	    domProps: {
+	      "value": 4,
+	      "checked": _vm._q(_vm.nr_player, 4)
+	    },
+	    on: {
+	      "change": function($event) {
+	        _vm.nr_player = 4
+	      }
+	    }
+	  }), _vm._v(" "), _c('label', {
+	    attrs: {
+	      "for": "t3-option"
+	    }
+	  }, [_vm._v("4")]), _vm._v(" "), _vm._m(5)]), _vm._v(" "), _c('li', [_c('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (_vm.nr_player),
+	      expression: "nr_player"
+	    }],
+	    staticClass: "radio1",
+	    attrs: {
+	      "type": "radio",
+	      "id": "t4-option",
+	      "name": "selector1"
+	    },
+	    domProps: {
+	      "value": 5,
+	      "checked": _vm._q(_vm.nr_player, 5)
+	    },
+	    on: {
+	      "change": function($event) {
+	        _vm.nr_player = 5
+	      }
+	    }
+	  }), _vm._v(" "), _c('label', {
+	    attrs: {
+	      "for": "t4-option"
+	    }
+	  }, [_vm._v("5")]), _vm._v(" "), _vm._m(6)])])]), _vm._v(" "), _c('div', {
+	    attrs: {
+	      "id": "RoomName"
+	    }
+	  }, [_vm._m(7), _vm._v(" "), _c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
 	      value: (_vm.name_room),
 	      expression: "name_room"
 	    }],
+	    staticClass: "input-text-1",
 	    attrs: {
 	      "type": "text",
 	      "name": "NameRoom"
@@ -17238,7 +17369,7 @@
 	        _vm.name_room = $event.target.value
 	      }
 	    }
-	  }), _vm._v(" "), _c('br'), _c('br'), _vm._v(" "), _c('div', {
+	  })]), _vm._v(" "), _c('div', {
 	    staticClass: "ftmRight"
 	  }, [_c('router-link', {
 	    attrs: {
@@ -17268,15 +17399,49 @@
 	        _vm.ClearForm()
 	      }
 	    }
-	  })], 1)])
+	  })], 1)])])
 	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('span', {
-	    staticClass: "span1"
-	  }, [_c('b', [_vm._v("Level:  ")])])
+	    staticStyle: {
+	      "float": "left"
+	    }
+	  }, [_c('b', [_vm._v("How many digits:  ")])])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "check"
+	  }, [_c('div', {
+	    staticClass: "inside"
+	  })])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "check"
+	  }, [_c('div', {
+	    staticClass: "inside"
+	  })])
 	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('span', {
-	    staticClass: "span1"
+	    staticStyle: {
+	      "float": "left"
+	    }
 	  }, [_c('b', [_vm._v("Players:")])])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "check"
+	  }, [_c('div', {
+	    staticClass: "inside"
+	  })])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "check"
+	  }, [_c('div', {
+	    staticClass: "inside"
+	  })])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "check"
+	  }, [_c('div', {
+	    staticClass: "inside"
+	  })])
 	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('span', {
 	    staticClass: "span1"

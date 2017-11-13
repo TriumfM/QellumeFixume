@@ -1,28 +1,74 @@
-<div class="frmNewGame">
-	<h2>Create new room</h2>
-	<br><br>
-	
-		<span class="span1"><b>Level:  </b> </span>
-		<span class="span1">Low</span><input type="radio" name="f" v-model="diff" v-bind:value="2">
-		<span class="span1">  Medium</span><input type="radio" name="f" v-model="diff" v-bind:value="3">
-		<span class="span1">  High</span><input type="radio" name="f" v-model="diff" v-bind:value="4">
+<div>
+	<h2 class="nenTitulli">Create new room</h2>
+	<br><br><br><br>
 
-		<br><br>
+	<div class="frmNewGame">
+		<div id="Level" >
+			<span style="float: left;"><b>How many digits:  </b> </span>
+			<ul class="ulRadio">
+			  <li>
+			    <input type="radio" class="radio2" id="f-option" name="selector" v-model="diff" v-bind:value="2">
+			    <label for="f-option">2</label>
+			    
+			    <div class="check"></div>
+			  </li>
+			  
+			  <li>
+			    <input type="radio" class="radio2" id="s-option" name="selector" v-model="diff" v-bind:value="3">
+			    <label for="s-option">3</label>
+			    
+			    <div class="check"><div class="inside"></div></div>
+			  </li>
+			  
+			  <li>
+			    <input type="radio" class="radio2" id="t-option" name="selector" v-model="diff" v-bind:value="4">
+			    <label for="t-option">4</label>
+			    
+			    <div class="check"><div class="inside"></div></div>
+			  </li>
+			</ul>
+		</div>
+		
+		<div id="NrPlayers">
+			<span  style="float: left;"><b>Players:</b></span>
 
-		<span class="span1"><b>Players:</b></span>
-		<select v-model="nr_player" class="select1">
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-		</select>
+			<ul class="ulRadio">
+			  <li>
+			    <input type="radio" class="radio1"  id="t1-option" v-model="nr_player" name="selector1"  v-bind:value="2">
+			    <label for="t1-option">2</label>
+			    
+			    <div class="check"></div>
+			  </li>
+			  
+			  <li>
+			    <input type="radio" class="radio1" id="t2-option" v-model="nr_player" name="selector1"  v-bind:value="3">
+			    <label for="t2-option">3</label>
+			    
+			    <div class="check"><div class="inside"></div></div>
+			  </li>
+			  
+			  <li>
+			    <input type="radio" class="radio1" id="t3-option" v-model="nr_player" name="selector1" v-bind:value="4">
+			    <label for="t3-option">4</label>
+			    
+			    <div class="check"><div class="inside"></div></div>
+			  </li>
 
-		<br><br>
+			  <li>
+			    <input type="radio" class="radio1" id="t4-option"  v-model="nr_player" name="selector1" v-bind:value="5">
+			    <label for="t4-option">5</label>
+			    
+			    <div class="check"><div class="inside"></div></div>
+			  </li>
+			</ul>
 
-		<span class="span1"><b>Name of room: </b> </span>
-		<input type="text" name="NameRoom" v-model="name_room">
 
-		<br><br>
+		</div>
+		
+		<div id="RoomName">
+			<span class="span1"><b>Name of room: </b> </span>
+			<input type="text" name="NameRoom" class="input-text-1" v-model="name_room">
+		</div>
 
 		<div class="ftmRight">
 			<router-link to="/startmultiplayer"> 
@@ -31,6 +77,6 @@
 							
 			<input class="buton3" type="button" name="Clear" value="Clear" @click="ClearForm()">
 		</div>
-	
+	</div>
 
 </div>

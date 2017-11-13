@@ -38,6 +38,11 @@ window.Echo = new Echo({
 Vue.use(Router)
 Vue.use(Resource)
 Vue.use(LocalStorage)
+
+Vue.config.devtools=false;
+Vue.config.debug=false;
+Vue.config.silent=true;
+
 // Vue.use(socketio)
 
 
