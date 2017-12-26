@@ -105,8 +105,6 @@
                 });
 
                 console.log('dadadad');
-
-
              },
 
             GetRoomOrder:function(response) {

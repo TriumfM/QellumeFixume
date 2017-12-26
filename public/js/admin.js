@@ -66,7 +66,7 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _Page = __webpack_require__(21);
+	var _Page = __webpack_require__(22);
 
 	var _Page2 = _interopRequireDefault(_Page);
 
@@ -15643,7 +15643,7 @@
 	__vue_exports__ = __webpack_require__(10)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(26)
+	var __vue_template__ = __webpack_require__(21)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -15702,14 +15702,10 @@
 
 	var _TextEditor2 = _interopRequireDefault(_TextEditor);
 
-	var _Page = __webpack_require__(21);
-
-	var _Page2 = _interopRequireDefault(_Page);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_vue2.default.component('HeaderComponent', _HeaderComponent2.default);
-	_vue2.default.component('PageOne', _Page2.default);
+	// Vue.component('PageOne',PageOne);
 
 	exports.default = {
 
@@ -16333,17 +16329,37 @@
 /* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "container1"
+	  }, [_c('header-component'), _vm._v(" "), _c('div', {
+	    staticClass: "container"
+	  }, [_c('div', {
+	    staticClass: "starter-template"
+	  }, [_c('router-view')], 1)])], 1)
+	},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-0c9b1462", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* styles */
-	__webpack_require__(22)
+	__webpack_require__(23)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(24)
+	__vue_exports__ = __webpack_require__(25)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(25)
+	var __vue_template__ = __webpack_require__(26)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -16377,13 +16393,13 @@
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(23);
+	var content = __webpack_require__(24);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(15)(content, {});
@@ -16403,7 +16419,7 @@
 	}
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(14)();
@@ -16417,7 +16433,7 @@
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -16442,7 +16458,7 @@
 	};
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -16469,26 +16485,6 @@
 	  module.hot.accept()
 	  if (module.hot.data) {
 	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-69ce8b03", module.exports)
-	  }
-	}
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "container1"
-	  }, [_c('header-component'), _vm._v(" "), _c('div', {
-	    staticClass: "container"
-	  }, [_c('div', {
-	    staticClass: "starter-template"
-	  }, [_c('router-view')], 1)])], 1)
-	},staticRenderFns: []}
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-0c9b1462", module.exports)
 	  }
 	}
 
@@ -16921,10 +16917,10 @@
 
 	                if (this.inputTry == this.$store.state.room.number) {
 	                    var username = this.$localStorage.get('user');
-	                    this.infoInput = username + " win this game!";
+	                    this.infoInput = username + " won this game!";
 	                    this.frmTry = false;
 
-	                    swal(username + ' win this game', '', 'info');
+	                    swal(username + ' won this game', '', 'info');
 
 	                    this.btnNewGame = true;
 	                }
@@ -17851,7 +17847,12 @@
 	      "to": "/game-multiplayer"
 	    }
 	  }, [_c('button', {
-	    staticClass: "buton3"
+	    staticClass: "buton3",
+	    on: {
+	      "click": function($event) {
+	        _vm.startGame()
+	      }
+	    }
 	  }, [_vm._v("Start game")])])], 1) : _vm._e()])
 	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
@@ -17951,7 +17952,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 

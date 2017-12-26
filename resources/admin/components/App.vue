@@ -6,10 +6,9 @@
     import HeaderComponent from '../components/includes/HeaderComponent.vue'
 
     import TextEditor from './helpers/TextEditor.vue'
-    import PageOne from '../components/Page1.vue'
 
     Vue.component('HeaderComponent',HeaderComponent);
-    Vue.component('PageOne',PageOne);
+    // Vue.component('PageOne',PageOne);
 
     export default {
 

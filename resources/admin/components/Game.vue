@@ -85,12 +85,12 @@ export  default {
                     if(this.inputTry==this.$store.state.room.number )
                     {
                         var username=this.$localStorage.get('user');
-                        this.infoInput=username+ " win this game!";
+                        this.infoInput=username+ " won this game!";
                         this.frmTry=false;
                         
 
                         swal(
-                          username +' win this game',
+                          username +' won this game',
                           '',
                           'info'
                         );
